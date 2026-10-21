@@ -22,7 +22,7 @@ test("link:local can replace its existing global link", { timeout: 300_000 }, as
     const npmRoot = runNpm(prefix, ["root", "--global"]);
     assert.equal(npmRoot.status, 0, formatFailure(npmRoot));
     assert.equal(
-      await canonicalPath(path.join(npmRoot.stdout.trim(), "create-ai-blueprint")),
+      await canonicalPath(path.join(npmRoot.stdout.trim(), "@samiziamolki", "create-ai-blueprint")),
       await canonicalPath(packageRoot)
     );
 

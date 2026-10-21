@@ -120,14 +120,14 @@ async function main(): Promise<void> {
     ]);
 
     const comparableClaudeContent = relativePath.endsWith("SKILL.md")
-      ? claudeContent.replace("disable-model-invocation: true\n", "")
-      : claudeContent;
+      ? normalizeEol(claudeContent).replace("disable-model-invocation: true\n", "")
+      : normalizeEol(claudeContent);
 
     if (relativePath.endsWith("SKILL.md") && !claudeContent.includes("disable-model-invocation: true")) {
       throw new Error(`Claude skill is not explicit-only: ${relativePath}`);
     }
 
-    if (codexContent !== comparableClaudeContent) {
+    if (normalizeEol(codexContent) !== comparableClaudeContent) {
       throw new Error(`Adapter files differ: ${relativePath}`);
     }
   }

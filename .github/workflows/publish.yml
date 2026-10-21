@@ -36,9 +36,10 @@ jobs:
         run: node -e "const v = require('./packages/create-ai-blueprint/package.json').version; const t = process.env.GITHUB_REF_NAME; if (t !== 'v' + v) { console.error('Tag ' + t + ' does not match package version ' + v); process.exit(1); }"
       - name: Publish to npm
         run: |
+          package_name=$(node -p "require('./package.json').name")
           package_version=$(node -p "require('./package.json').version")
-          if npm view "create-ai-blueprint@$package_version" version >/dev/null 2>&1; then
-            echo "create-ai-blueprint@$package_version is already published."
+          if npm view "$package_name@$package_version" version >/dev/null 2>&1; then
+            echo "$package_name@$package_version is already published."
           else
             npm publish
           fi
