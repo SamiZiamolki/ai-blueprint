@@ -46,7 +46,7 @@ after(async () => {
 });
 
 for (const binary of ["create-ai-blueprint", "blueprint"]) {
-  const invocation = binary === "blueprint" ? binary : "npx create-ai-blueprint@latest";
+  const invocation = binary === "blueprint" ? binary : "npx @samiziamolki/create-ai-blueprint@latest";
 
   for (const command of ["status", "dashboard", "update"]) {
     test(`${binary} ${command} help works without a template or project`, async () => {
@@ -59,7 +59,7 @@ for (const binary of ["create-ai-blueprint", "blueprint"]) {
         assert.equal(result.stderr, "");
         assert.doesNotMatch(result.stdout, /Select AI tool adapters|Would copy:|Blueprint dashboard: http/);
         if (command === "update") {
-          assert.match(result.stdout, /npx create-ai-blueprint@latest update --help|Show update help/);
+          assert.match(result.stdout, /npx @samiziamolki\/create-ai-blueprint@latest update --help|Show update help/);
           if (binary === "blueprint") {
             assert.match(result.stdout, /does not install or update Blueprint/);
             assert.doesNotMatch(result.stdout, /--force|--codex/);
@@ -138,7 +138,7 @@ test("global install and update remain unavailable and leave the target untouche
     const result = runWithoutTemplate("blueprint", command, "--target", target, "--yes", "--force");
     assert.equal(result.status, 1, result.stderr);
     assert.equal(result.stdout, "");
-    assert.match(result.stderr, /Use `npx create-ai-blueprint@latest` to install Blueprint/);
+    assert.match(result.stderr, /Use `npx @samiziamolki\/create-ai-blueprint@latest` to install Blueprint/);
   }
   assert.deepEqual(await fs.readdir(target), []);
 });

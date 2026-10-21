@@ -320,16 +320,16 @@ test("global CLI installation is offered for published interactive installs and 
   assert.equal(isGlobalCliInstallConfirmed("no"), false);
   assert.equal(
     getGlobalCliInstallCommand("0.9.0"),
-    "npm install --global create-ai-blueprint@0.9.0"
+    "npm install --global @samiziamolki/create-ai-blueprint@0.9.0"
   );
   assert.equal(
     getGlobalCliPrompt("install", null, "0.12.0"),
     "\nInstall the optional global `blueprint` CLI command?\n" +
       "This adds the shorter `blueprint status` and `blueprint dashboard` commands.\n" +
       "Without it, use:\n" +
-      "  npx create-ai-blueprint@latest status\n" +
-      "  npx create-ai-blueprint@latest dashboard\n" +
-      "This runs: npm install --global create-ai-blueprint@0.12.0\n" +
+      "  npx @samiziamolki/create-ai-blueprint@latest status\n" +
+      "  npx @samiziamolki/create-ai-blueprint@latest dashboard\n" +
+      "This runs: npm install --global @samiziamolki/create-ai-blueprint@0.12.0\n" +
       "Continue? [y/N]: "
   );
   assert.equal(
@@ -337,9 +337,9 @@ test("global CLI installation is offered for published interactive installs and 
     "\nUpdate the optional global `blueprint` CLI from 0.11.1 to 0.12.0?\n" +
       "This adds the shorter `blueprint status` and `blueprint dashboard` commands.\n" +
       "Without it, use:\n" +
-      "  npx create-ai-blueprint@latest status\n" +
-      "  npx create-ai-blueprint@latest dashboard\n" +
-      "This runs: npm install --global create-ai-blueprint@0.12.0\n" +
+      "  npx @samiziamolki/create-ai-blueprint@latest status\n" +
+      "  npx @samiziamolki/create-ai-blueprint@latest dashboard\n" +
+      "This runs: npm install --global @samiziamolki/create-ai-blueprint@0.12.0\n" +
       "Continue? [y/N]: "
   );
   assert.equal(selectGlobalCliAction(null, "0.11.0"), "install");

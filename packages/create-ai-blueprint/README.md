@@ -13,9 +13,9 @@ limited to current requirements. It prefers existing project and platform
 capabilities before new machinery while preserving real trust and data-integrity
 boundaries.
 
-[![npm version](https://img.shields.io/npm/v/create-ai-blueprint?style=flat-square&color=155eef)](https://www.npmjs.com/package/create-ai-blueprint)
-[![Validate Blueprint](https://github.com/aiblueprinthq/ai-blueprint/actions/workflows/validate.yml/badge.svg)](https://github.com/aiblueprinthq/ai-blueprint/actions/workflows/validate.yml)
-[![MIT license](https://img.shields.io/npm/l/create-ai-blueprint?style=flat-square&color=155eef)](LICENSE)
+[![npm version](https://img.shields.io/npm/v/@samiziamolki/create-ai-blueprint?style=flat-square&color=155eef)](https://www.npmjs.com/package/@samiziamolki/create-ai-blueprint)
+[![Validate Blueprint](https://github.com/SamiZiamolki/ai-blueprint/actions/workflows/validate.yml/badge.svg)](https://github.com/SamiZiamolki/ai-blueprint/actions/workflows/validate.yml)
+[![MIT license](https://img.shields.io/npm/l/@samiziamolki/create-ai-blueprint?style=flat-square&color=155eef)](LICENSE)
 
 [Official site](https://ai-blueprint.dev) |
 [Documentation](https://ai-blueprint.dev/docs/) |
@@ -29,24 +29,24 @@ Choose the command for your project's package manager:
 
 ```bash
 # npm
-npx create-ai-blueprint@latest
+npx @samiziamolki/create-ai-blueprint@latest
 
 # pnpm
-pnpm dlx create-ai-blueprint@latest
+pnpm dlx @samiziamolki/create-ai-blueprint@latest
 ```
 
 A project that enforces pnpm through `devEngines.packageManager` can reject
 `npx` with `EBADDEVENGINES` before Blueprint starts. Use `pnpm dlx` in that
 project; do not remove its package-manager requirement.
 
-The remaining `npx create-ai-blueprint@latest` examples also work with
-`pnpm dlx create-ai-blueprint@latest`, keeping the same command and options.
+The remaining `npx @samiziamolki/create-ai-blueprint@latest` examples also work with
+`pnpm dlx @samiziamolki/create-ai-blueprint@latest`, keeping the same command and options.
 
 
 You can also use npm's initializer form:
 
 ```bash
-npm create ai-blueprint@latest
+npm create @samiziamolki/ai-blueprint@latest
 ```
 
 The installer copies the Blueprint workflow files into the current directory:
@@ -70,7 +70,7 @@ Run installation and update commands in your terminal. Run workflow skills in
 your AI coding chat. Use `/feature` in Claude Code or Google Antigravity, and use
 `$feature` in Codex. Other tools can run the named skill through plain language.
 `blueprint feature` does not run the Feature skill.
-Use `npx create-ai-blueprint@latest status --help` for focused terminal help.
+Use `npx @samiziamolki/create-ai-blueprint@latest status --help` for focused terminal help.
 
 Learn the feature loop:
 
@@ -161,20 +161,20 @@ appear.
 ## Options
 
 ```bash
-npx create-ai-blueprint@latest -- --codex
-npx create-ai-blueprint@latest -- --claude
-npx create-ai-blueprint@latest -- --copilot
-npx create-ai-blueprint@latest -- --opencode
-npx create-ai-blueprint@latest -- --antigravity
-npx create-ai-blueprint@latest -- --codex --opencode
-npx create-ai-blueprint@latest -- --all
-npx create-ai-blueprint@latest -- --both
-npx create-ai-blueprint@latest -- --force
-npx create-ai-blueprint@latest -- --target ./my-app
-npx create-ai-blueprint@latest update -- --codex
+npx @samiziamolki/create-ai-blueprint@latest -- --codex
+npx @samiziamolki/create-ai-blueprint@latest -- --claude
+npx @samiziamolki/create-ai-blueprint@latest -- --copilot
+npx @samiziamolki/create-ai-blueprint@latest -- --opencode
+npx @samiziamolki/create-ai-blueprint@latest -- --antigravity
+npx @samiziamolki/create-ai-blueprint@latest -- --codex --opencode
+npx @samiziamolki/create-ai-blueprint@latest -- --all
+npx @samiziamolki/create-ai-blueprint@latest -- --both
+npx @samiziamolki/create-ai-blueprint@latest -- --force
+npx @samiziamolki/create-ai-blueprint@latest -- --target ./my-app
+npx @samiziamolki/create-ai-blueprint@latest update -- --codex
 ```
 
-The same flags work with `npm create ai-blueprint@latest -- ...`.
+The same flags work with `npm create @samiziamolki/ai-blueprint@latest -- ...`.
 
 The interactive installer shows a checkbox list with Claude Code and Codex
 selected by default. GitHub Copilot and OpenCode remain available but unchecked.
@@ -278,20 +278,20 @@ Preview the update plan:
 
 ```bash
 # npm
-npx create-ai-blueprint@latest update --dry-run
+npx @samiziamolki/create-ai-blueprint@latest update --dry-run
 
 # pnpm
-pnpm dlx create-ai-blueprint@latest update --dry-run
+pnpm dlx @samiziamolki/create-ai-blueprint@latest update --dry-run
 ```
 
 Apply the update:
 
 ```bash
 # npm
-npx create-ai-blueprint@latest update
+npx @samiziamolki/create-ai-blueprint@latest update
 
 # pnpm
-pnpm dlx create-ai-blueprint@latest update
+pnpm dlx @samiziamolki/create-ai-blueprint@latest update
 ```
 
 The updater detects the installed adapters and manages only these paths:
@@ -418,13 +418,13 @@ package resolution can run an older release even when the command uses
 
 ```bash
 # npm
-npx create-ai-blueprint@1.13.0 update
+npx @samiziamolki/create-ai-blueprint@1.13.0 update
 
 # pnpm
-pnpm dlx create-ai-blueprint@1.13.0 update
+pnpm dlx @samiziamolki/create-ai-blueprint@1.13.0 update
 ```
 
-Use the version from the [release list](https://github.com/aiblueprinthq/ai-blueprint/releases)
+Use the version from the [release list](https://github.com/SamiZiamolki/ai-blueprint/releases)
 when following this example after a newer release. The interactive adapter
 picker was introduced in 1.8.0. Run without adapter flags or `--yes` in an
 interactive terminal to select adapters. If an older updater offers to replace
@@ -437,7 +437,7 @@ Run the read-only status command from a Blueprint project or any directory
 inside it:
 
 ```bash
-npx create-ai-blueprint@latest status
+npx @samiziamolki/create-ai-blueprint@latest status
 ```
 
 It reports configuration state, recorded command activity, build-plan progress,
@@ -454,7 +454,7 @@ points to `/doctor`, which can offer to reset only `blueprint/.state/run.json`
 after approval. For scripts and integrations, request the versioned JSON object:
 
 ```bash
-npx create-ai-blueprint@latest status --json
+npx @samiziamolki/create-ai-blueprint@latest status --json
 ```
 
 Tracked workflow skills use the packaged dashboard activity helper instead of
@@ -467,7 +467,7 @@ global CLI version. It offers to run the following command only when the CLI is
 missing or does not match the npx package version:
 
 ```bash
-npm install --global create-ai-blueprint@latest
+npm install --global @samiziamolki/create-ai-blueprint@latest
 ```
 
 The prompt defaults to no and is skipped for matching versions, non-interactive
@@ -517,8 +517,8 @@ URL without opening a browser. The older `blueprint ui` form remains as a
 deprecated alias.
 
 The optional global `blueprint` command is limited to read-only project status
-and this local dashboard. Continue to use `npx create-ai-blueprint@latest` for
-installation and `npx create-ai-blueprint@latest update` for managed workflow
+and this local dashboard. Continue to use `npx @samiziamolki/create-ai-blueprint@latest` for
+installation and `npx @samiziamolki/create-ai-blueprint@latest update` for managed workflow
 updates.
 
 ## Help and contributing

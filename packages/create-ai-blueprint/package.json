@@ -1,5 +1,5 @@
 {
-  "name": "create-ai-blueprint",
+  "name": "@samiziamolki/create-ai-blueprint",
   "version": "1.13.0",
   "description": "Install a file-backed, spec-driven AI development workflow into a scaffolded app.",
   "license": "MIT",
@@ -8,11 +8,11 @@
   "homepage": "https://ai-blueprint.dev",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aiblueprinthq/ai-blueprint.git",
+    "url": "git+https://github.com/SamiZiamolki/ai-blueprint.git",
     "directory": "packages/create-ai-blueprint"
   },
   "bugs": {
-    "url": "https://github.com/aiblueprinthq/ai-blueprint/issues"
+    "url": "https://github.com/SamiZiamolki/ai-blueprint/issues"
   },
   "keywords": [
     "ai",

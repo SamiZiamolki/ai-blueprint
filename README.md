@@ -11,8 +11,8 @@
 <p align="center"><strong>A file-backed, spec-driven AI coding workflow framework for building real software while staying in control.</strong></p>
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/create-ai-blueprint"><img src="https://img.shields.io/npm/v/create-ai-blueprint?style=flat-square&color=155eef" alt="npm version"></a>
-  <a href="https://github.com/aiblueprinthq/ai-blueprint/actions/workflows/validate.yml"><img src="https://github.com/aiblueprinthq/ai-blueprint/actions/workflows/validate.yml/badge.svg" alt="Validate Blueprint"></a>
+  <a href="https://www.npmjs.com/package/@samiziamolki/create-ai-blueprint"><img src="https://img.shields.io/npm/v/@samiziamolki/create-ai-blueprint?style=flat-square&color=155eef" alt="npm version"></a>
+  <a href="https://github.com/SamiZiamolki/ai-blueprint/actions/workflows/validate.yml"><img src="https://github.com/SamiZiamolki/ai-blueprint/actions/workflows/validate.yml/badge.svg" alt="Validate Blueprint"></a>
   <a href="LICENSE"><img src="https://img.shields.io/github/license/aiblueprinthq/ai-blueprint?style=flat-square&color=155eef" alt="MIT license"></a>
 </p>
 
@@ -20,8 +20,8 @@
   <a href="https://ai-blueprint.dev">Official site</a> |
   <a href="https://ai-blueprint.dev/docs/">Documentation</a> |
   <a href="https://www.youtube.com/watch?v=L4g6GGLzAyo">Video demo</a> |
-  <a href="https://www.npmjs.com/package/create-ai-blueprint">npm</a> |
-  <a href="https://github.com/aiblueprinthq/ai-blueprint/releases">Releases</a> |
+  <a href="https://www.npmjs.com/package/@samiziamolki/create-ai-blueprint">npm</a> |
+  <a href="https://github.com/SamiZiamolki/ai-blueprint/releases">Releases</a> |
   <a href="CHANGELOG.md">Changelog</a>
 </p>
 
@@ -91,18 +91,18 @@ Choose the command for your project's package manager:
 
 ```bash
 # npm
-npx create-ai-blueprint@latest
+npx @samiziamolki/create-ai-blueprint@latest
 
 # pnpm
-pnpm dlx create-ai-blueprint@latest
+pnpm dlx @samiziamolki/create-ai-blueprint@latest
 ```
 
 A project that enforces pnpm through `devEngines.packageManager` can reject
 `npx` with `EBADDEVENGINES` before Blueprint starts. Use `pnpm dlx` in that
 project; do not remove its package-manager requirement.
 
-The remaining `npx create-ai-blueprint@latest` examples also work with
-`pnpm dlx create-ai-blueprint@latest`, keeping the same command and options.
+The remaining `npx @samiziamolki/create-ai-blueprint@latest` examples also work with
+`pnpm dlx @samiziamolki/create-ai-blueprint@latest`, keeping the same command and options.
 
 
 Next:
@@ -229,7 +229,7 @@ alongside your project's progress.
 Run it from your Blueprint project:
 
 ```bash
-npx create-ai-blueprint@latest dashboard
+npx @samiziamolki/create-ai-blueprint@latest dashboard
 ```
 
 With the optional global CLI installed, use `blueprint dashboard` instead.
@@ -321,7 +321,7 @@ and other adapters can run the named skill through plain language.
 See the [Command Guide](https://ai-blueprint.dev/docs/command-guide/) for the
 full reference. Terminal commands manage installation, updates, status, and the
 dashboard; they do not run these skills. For example, `blueprint doctor` explains
-how to invoke Doctor in chat. Use `npx create-ai-blueprint@latest status --help`
+how to invoke Doctor in chat. Use `npx @samiziamolki/create-ai-blueprint@latest status --help`
 for focused terminal help.
 
 ## File-backed project state
@@ -463,35 +463,35 @@ invocation, and project-layout details.
 Check a Blueprint project without changing it:
 
 ```bash
-npx create-ai-blueprint@latest status
+npx @samiziamolki/create-ai-blueprint@latest status
 ```
 
 Preview and apply managed workflow updates:
 
 ```bash
 # npm
-npx create-ai-blueprint@latest update --dry-run
+npx @samiziamolki/create-ai-blueprint@latest update --dry-run
 
 # pnpm
-pnpm dlx create-ai-blueprint@latest update --dry-run
+pnpm dlx @samiziamolki/create-ai-blueprint@latest update --dry-run
 
 # npm
-npx create-ai-blueprint@latest update
+npx @samiziamolki/create-ai-blueprint@latest update
 
 # pnpm
-pnpm dlx create-ai-blueprint@latest update
+pnpm dlx @samiziamolki/create-ai-blueprint@latest update
 ```
 
 Update can also add an adapter to an existing installation:
 
 ```bash
-npx create-ai-blueprint@latest update -- --codex
+npx @samiziamolki/create-ai-blueprint@latest update -- --codex
 ```
 
 An optional global installation exposes the shorter `blueprint` command:
 
 ```bash
-npm install --global create-ai-blueprint@latest
+npm install --global @samiziamolki/create-ai-blueprint@latest
 blueprint status
 ```
 
@@ -524,13 +524,13 @@ package resolution can run an older release even when the command uses
 
 ```bash
 # npm
-npx create-ai-blueprint@1.13.0 update
+npx @samiziamolki/create-ai-blueprint@1.13.0 update
 
 # pnpm
-pnpm dlx create-ai-blueprint@1.13.0 update
+pnpm dlx @samiziamolki/create-ai-blueprint@1.13.0 update
 ```
 
-Use the version from the [release list](https://github.com/aiblueprinthq/ai-blueprint/releases)
+Use the version from the [release list](https://github.com/SamiZiamolki/ai-blueprint/releases)
 when following this example after a newer release. The interactive adapter
 picker was introduced in 1.8.0. Run without adapter flags or `--yes` in an
 interactive terminal to select adapters. If an older updater offers to replace

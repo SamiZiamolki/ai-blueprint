@@ -134,6 +134,7 @@ async function main(): Promise<void> {
     const installedPackageRoot = path.join(
       runnerDir,
       "node_modules",
+      "@samiziamolki",
       "create-ai-blueprint"
     );
     await requireMissing(

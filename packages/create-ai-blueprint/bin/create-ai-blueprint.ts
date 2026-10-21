@@ -107,7 +107,7 @@ async function runCli(
     options.command !== "dashboard"
   ) {
     throw new Error(
-      "The global blueprint command supports project status and the local dashboard only. Use `npx create-ai-blueprint@latest` to install Blueprint or `npx create-ai-blueprint@latest update` to update it."
+      "The global blueprint command supports project status and the local dashboard only. Use `npx @samiziamolki/create-ai-blueprint@latest` to install Blueprint or `npx @samiziamolki/create-ai-blueprint@latest update` to update it."
     );
   }
 
@@ -350,7 +350,7 @@ function parseArgs(args: readonly string[], surface: CliSurface = "package"): Cl
       );
     }
 
-    const binary = surface === "global" ? "blueprint" : "npx create-ai-blueprint@latest";
+    const binary = surface === "global" ? "blueprint" : "npx @samiziamolki/create-ai-blueprint@latest";
     const command = options.command === "install" ? "" : ` ${options.command}`;
     throw new Error(`Unknown option: ${arg}\nRun \`${binary}${command} --help\` for usage.`);
   }
@@ -973,7 +973,7 @@ async function readGlobalCliVersion(): Promise<string | null> {
     }
 
     const packageJson = await fs.readFile(
-      path.join(globalRoot, "create-ai-blueprint", "package.json"),
+      path.join(globalRoot, "@samiziamolki", "create-ai-blueprint", "package.json"),
       "utf8"
     );
     const metadata: unknown = JSON.parse(packageJson);
@@ -1040,7 +1040,7 @@ function isGlobalCliInstallConfirmed(answer: string): boolean {
 }
 
 function getGlobalCliInstallCommand(version: string): string {
-  return `npm install --global create-ai-blueprint@${version}`;
+  return `npm install --global @samiziamolki/create-ai-blueprint@${version}`;
 }
 
 function getGlobalCliPrompt(
@@ -1055,15 +1055,15 @@ function getGlobalCliPrompt(
   return `\n${question}
 This adds the shorter \`blueprint status\` and \`blueprint dashboard\` commands.
 Without it, use:
-  npx create-ai-blueprint@latest status
-  npx create-ai-blueprint@latest dashboard
+  npx @samiziamolki/create-ai-blueprint@latest status
+  npx @samiziamolki/create-ai-blueprint@latest dashboard
 This runs: ${getGlobalCliInstallCommand(targetVersion)}
 Continue? [y/N]: `;
 }
 
 async function installGlobalCli(version: string): Promise<void> {
   const npmExecPath = process.env.npm_execpath;
-  const packageSpec = `create-ai-blueprint@${version}`;
+  const packageSpec = `@samiziamolki/create-ai-blueprint@${version}`;
   const command = npmExecPath
     ? process.execPath
     : process.platform === "win32"
@@ -1111,7 +1111,7 @@ async function waitForShutdown(): Promise<void> {
 }
 
 function printCommandHelp(command: CliOptions["command"], surface: CliSurface): void {
-  const binary = surface === "global" ? "blueprint" : "npx create-ai-blueprint@latest";
+  const binary = surface === "global" ? "blueprint" : "npx @samiziamolki/create-ai-blueprint@latest";
 
   if (command === "status") {
     console.log(`${binary} status
@@ -1159,8 +1159,8 @@ Examples:
 
 The global blueprint command does not install or update Blueprint.
 Use the installer to update your project:
-  npx create-ai-blueprint@latest update
-  npx create-ai-blueprint@latest update --help`);
+  npx @samiziamolki/create-ai-blueprint@latest update
+  npx @samiziamolki/create-ai-blueprint@latest update --help`);
     return;
   }
 
@@ -1184,7 +1184,7 @@ confirm replacement interactively or use --force. --force backs them up before
 replacing or removing them.
 
 Usage:
-  npx create-ai-blueprint@latest update [options]
+  npx @samiziamolki/create-ai-blueprint@latest update [options]
 
 Options:
   --codex          Add Codex to the installed adapters
@@ -1202,9 +1202,9 @@ Options:
   --version, -v    Show package version
 
 Examples:
-  npx create-ai-blueprint@latest update
-  npx create-ai-blueprint@latest update --codex --dry-run
-  npx create-ai-blueprint@latest update --target ./my-app --yes`);
+  npx @samiziamolki/create-ai-blueprint@latest update
+  npx @samiziamolki/create-ai-blueprint@latest update --codex --dry-run
+  npx @samiziamolki/create-ai-blueprint@latest update --target ./my-app --yes`);
 }
 
 function printHelp(): void {
@@ -1213,20 +1213,20 @@ function printHelp(): void {
 Install AI Blueprint into an already scaffolded app.
 
 Usage:
-  npx create-ai-blueprint@latest
-  npx create-ai-blueprint@latest update
-  npx create-ai-blueprint@latest update -- --codex
-  npx create-ai-blueprint@latest status
-  npx create-ai-blueprint@latest status --json
-  npx create-ai-blueprint@latest dashboard
-  npx create-ai-blueprint@latest -- --codex
-  npx create-ai-blueprint@latest -- --claude
-  npx create-ai-blueprint@latest -- --copilot
-  npx create-ai-blueprint@latest -- --opencode
-  npx create-ai-blueprint@latest -- --antigravity
-  npx create-ai-blueprint@latest -- --codex --opencode
-  npx create-ai-blueprint@latest -- --all
-  npx create-ai-blueprint@latest -- --both
+  npx @samiziamolki/create-ai-blueprint@latest
+  npx @samiziamolki/create-ai-blueprint@latest update
+  npx @samiziamolki/create-ai-blueprint@latest update -- --codex
+  npx @samiziamolki/create-ai-blueprint@latest status
+  npx @samiziamolki/create-ai-blueprint@latest status --json
+  npx @samiziamolki/create-ai-blueprint@latest dashboard
+  npx @samiziamolki/create-ai-blueprint@latest -- --codex
+  npx @samiziamolki/create-ai-blueprint@latest -- --claude
+  npx @samiziamolki/create-ai-blueprint@latest -- --copilot
+  npx @samiziamolki/create-ai-blueprint@latest -- --opencode
+  npx @samiziamolki/create-ai-blueprint@latest -- --antigravity
+  npx @samiziamolki/create-ai-blueprint@latest -- --codex --opencode
+  npx @samiziamolki/create-ai-blueprint@latest -- --all
+  npx @samiziamolki/create-ai-blueprint@latest -- --both
 
 Options:
   --codex          Add Codex on install, or add it to the installed adapters on update
@@ -1268,8 +1268,8 @@ Options:
   --version, -v    Show package version
 
 Install or update Blueprint with:
-  npx create-ai-blueprint@latest
-  npx create-ai-blueprint@latest update`);
+  npx @samiziamolki/create-ai-blueprint@latest
+  npx @samiziamolki/create-ai-blueprint@latest update`);
 }
 
 // Correct for both layouts: dist/bin/ when published, bin/ in a source checkout.
